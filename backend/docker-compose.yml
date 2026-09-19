@@ -1,0 +1,11 @@
+services:
+  welltwin-api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: sqlite:///./welltwin.db
+      JWT_SECRET: welltwin-hackathon-secret-change-me
+      CORS_ORIGINS: http://localhost:3000
+    volumes:
+      - ./:/app
